@@ -31,7 +31,7 @@ class CsvController extends Controller
         header('Content-Disposition: attachment; filename="Clientes.csv";');
 
         $complicado = app('db')->connection('complicado');
-        $clientes = $complicado->select("SELECT * FROM Clientes");
+        $clientes = $complicado->select("SELECT * FROM Cliente");
         $csv = fopen('php://output', 'w');
 
         foreach ($clientes as $cliente) {
