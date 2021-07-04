@@ -19,5 +19,5 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'csv'], function () use ($router) {
     $router->get('animais', 'CsvController@animais');
     $router->get('clientes', 'CsvController@clientes');
+    $router->post('add', 'CsvController@add');
 });
-$router->post('csv', 'CsvController@add');
