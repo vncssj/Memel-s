@@ -2,28 +2,16 @@
   <div id="form" class="container">
     <h2>Formulário</h2>
     <div class="before-form">
-      <form action="http://localhost:8000/csv" method="post" enctype=multipart/form-data>
+      <form action="http://localhost:8000/csv/add" method="post" enctype=multipart/form-data>
         <div class="form-field">
           <label>Selecione os arquivos do tipo CSV</label>
-          <input type="file" @change="previewFiles" name="csv" multiple />
+          <input type="file" name="csv[]" multiple />
         </div>
         <button type="submit">Enviar</button>
       </form>
     </div>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return { data: [] };
-  },
-  methods: {
-    previewFiles(event) {
-      this.data = event.target.files;
-    },
-  },
-};
-</script>
 <style>
 .container {
   padding: 10px;
