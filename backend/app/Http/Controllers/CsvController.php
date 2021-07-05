@@ -112,13 +112,15 @@ class CsvController extends Controller
                             $insert = $simples->insert('Insert into animais (id, pessoa_id, nome, raca_id, especie_id, historico, nascimento) values (?, ?, ?, ?, ?, ?, ?)', [$a_id, $a_cliente, $a_nome, $a_raca, $a_especie, $a_historico, $a_nascimento]);
                             var_dump($insert);
                         } catch (\Exception $e) {
-                            echo $e->getMessage();
+                            // echo $e->getMessage();
                         }
                     }
                 }
 
                 fclose($csv_file);
                 unlink(app()->basePath('public') . '/csvs/' . $nome);
+
+                return redirect('http://127.0.0.1:8080');
             }
         }
     }
